@@ -91,7 +91,7 @@ architecture Behavioral of elevator_controller_fsm is
 	
 	-- Here you create variables that can take on the values defined above. Neat!	
 	signal f_Q, f_Q_next: sm_floor;
-
+    
 begin
 
 	-- CONCURRENT STATEMENTS ------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ begin
                 s_floor3 when (i_stop = '0' and i_up_down = '0' and f_Q = s_floor4) else
                 s_floor2 when (i_stop = '0' and i_up_down = '0' and f_Q = s_floor3) else
                 s_floor1 when (i_stop = '0' and i_up_down = '0' and f_Q = s_floor2) else
-                s_floor2;
+                f_Q;
             -- default case
   
 	-- Output logic
