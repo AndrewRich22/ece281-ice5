@@ -118,8 +118,8 @@ begin
              assert w_floor = "0100" report "bad up from floor3" severity failure;  
         w_stop <= '1';  wait for k_clk_period * 2;
               assert w_floor = "0100" report "bad wait on floor4" severity failure;
-        w_stop <= '0';  wait for k_clk_period;
-        w_up_down <= '0';
+        w_stop <= '0'; w_up_down <= '0';
+        wait for k_clk_period;
               assert w_floor = "0011" report "bad down from floor4" severity failure; 
         w_stop <= '1';  wait for k_clk_period * 2;
               assert w_floor = "0011" report "bad wait on floor3" severity failure;
